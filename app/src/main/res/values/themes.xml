@@ -1,0 +1,52 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Yummy" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/background</item>
+        <item name="android:navigationBarColor">@color/background</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+    <!-- Estilos de texto reutilizables (tipografía Segoe UI) -->
+    <style name="YummyTitle">
+        <item name="android:fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:textSize">27sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="YummyBody">
+        <item name="android:fontFamily">@font/segoe_ui</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="YummyButton">
+        <item name="android:layout_height">52dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="YummyChip">
+        <item name="android:layout_height">36dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">18dp</item>
+        <item name="android:paddingEnd">18dp</item>
+        <item name="android:fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:background">@drawable/bg_chip_white</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+    <style name="Theme.Yummy" parent="Base.Theme.Yummy" />
+</resources>

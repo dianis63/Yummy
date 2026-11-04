@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#FFFFFF</color>
+    <color name="background">#FCF5E0</color>
+    <color name="primary">#E85D6F</color>
+    <color name="text_primary">#2A2522</color>
+    <color name="text_secondary">#5E554E</color>
+    <color name="dot_inactive">#EDE4D0</color>
+
+    <color name="ring_green">#EDF0DA</color>
+    <color name="ring_yellow">#F7ECCB</color>
+    <color name="ring_pink">#FBDDD6</color>
+</resources>
