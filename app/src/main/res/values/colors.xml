@@ -10,4 +10,7 @@
     <color name="ring_green">#EDF0DA</color>
     <color name="ring_yellow">#F7ECCB</color>
     <color name="ring_pink">#FBDDD6</color>
+
+    <color name="icon_gray">#5A5550</color>
+    <color name="text_hint">#8F867D</color>
 </resources>

@@ -49,4 +49,45 @@
         <item name="android:focusable">true</item>
     </style>
     <style name="Theme.Yummy" parent="Base.Theme.Yummy" />
+
+    <!-- Contenedor blanco del campo (ícono + texto) -->
+    <style name="YummyInputContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">58dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:background">@drawable/bg_input</item>
+        <item name="android:elevation">3dp</item>
+    </style>
+
+    <!-- Texto dentro del campo -->
+    <style name="YummyEditText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@null</item>
+        <item name="android:fontFamily">@font/segoe_ui</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_hint</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- Chips de "Personas en tu hogar" -->
+    <style name="YummyPersonChip">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/icon_gray</item>
+        <item name="android:background">@drawable/bg_person_chip</item>
+        <item name="android:elevation">2dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
 </resources>

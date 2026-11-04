@@ -14,4 +14,24 @@
 
     <string name="onboarding_3_title">Recetas con lo que tienes</string>
     <string name="onboarding_3_desc">Sugerimos platillos según tu inventario. Menos desperdicio, más sabor.</string>
+
+
+    <string name="hint_name">Nombre</string>
+    <string name="hint_email">Correo electrónico</string>
+    <string name="hint_password">Contraseña</string>
+
+    <string name="login_welcome">Bienvenido de vuelta</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="login_no_account">¿No tienes cuenta?</string>
+    <string name="login_register">Regístrate</string>
+
+    <string name="register_title">Crea tu cuenta</string>
+    <string name="register_subtitle">Empieza a cuidar tu despensa hoy</string>
+    <string name="register_household">Personas en tu hogar</string>
+    <string name="register_button">Crear cuenta</string>
+    <string name="register_have_account">¿Ya tienes cuenta?</string>
+    <string name="register_login">Inicia sesión</string>
+
+    <string name="cd_back">Volver</string>
+    <string name="cd_toggle_password">Mostrar u ocultar contraseña</string>
 </resources>
