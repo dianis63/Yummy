@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="QuickActionView">
+        <attr name="qaIcon" format="reference" />
+        <attr name="qaLabel" format="string" />
+        <attr name="qaAccent" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="SettingRowView">
+        <attr name="srIcon" format="reference" />
+        <attr name="srTitle" format="string" />
+        <attr name="srDanger" format="boolean" />
+    </declare-styleable>
+</resources>

@@ -13,4 +13,12 @@
 
     <color name="icon_gray">#5A5550</color>
     <color name="text_hint">#8F867D</color>
+    <color name="scrim">#D9FCF5E0</color>
+    <color name="status_expired_bg">#FBDDE1</color>
+    <color name="status_expired_fg">#E85D6F</color>
+    <color name="status_expiring_bg">#F7ECCB</color>
+    <color name="status_expiring_fg">#D9A21B</color>
+    <color name="status_fresh_bg">#E3EDCF</color>
+    <color name="status_fresh_fg">#5E8C3A</color>
+    <color name="tile_neutral">#F3EDE0</color>
 </resources>

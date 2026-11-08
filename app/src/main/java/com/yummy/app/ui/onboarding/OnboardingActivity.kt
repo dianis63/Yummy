@@ -3,12 +3,16 @@ package com.yummy.app.ui.onboarding
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.viewpager2.widget.ViewPager2
+import com.yummy.app.MainActivity
 import com.yummy.app.R
+import com.yummy.app.data.AuthRepository
 import com.yummy.app.data.local.AppPrefs
 import com.yummy.app.databinding.ActivityOnboardingBinding
 import com.yummy.app.ui.auth.LoginActivity
 import com.yummy.app.ui.auth.RegisterActivity
+import kotlinx.coroutines.launch
 
 class OnboardingActivity : AppCompatActivity() {
 
@@ -38,18 +42,27 @@ class OnboardingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Si ya vio el onboarding, pasa directo al login
-        if (AppPrefs.isOnboardingDone(this)) {
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
-            return
+        lifecycleScope.launch {
+            // 1. Con sesión activa: directo a la pantalla principal
+            if (AuthRepository.hasSession()) {
+                startActivity(Intent(this@OnboardingActivity, MainActivity::class.java))
+                finish()
+                return@launch
+            }
+
+            // 2. Sin sesión pero ya vio el onboarding: al login
+            if (AppPrefs.isOnboardingDone(this@OnboardingActivity)) {
+                startActivity(Intent(this@OnboardingActivity, LoginActivity::class.java))
+                finish()
+                return@launch
+            }
+
+            // 3. Mostrar el onboarding
+            binding = ActivityOnboardingBinding.inflate(layoutInflater)
+            setContentView(binding.root)
+            setupPager()
+            setupClicks()
         }
-
-        binding = ActivityOnboardingBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        setupPager()
-        setupClicks()
     }
 
     private fun setupPager() = with(binding) {

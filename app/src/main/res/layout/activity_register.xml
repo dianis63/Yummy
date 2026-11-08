@@ -109,6 +109,15 @@
                 android:autofillHints="newPassword"
                 android:hint="@string/hint_password"
                 android:inputType="textPassword" />
+
+            <ImageView
+                android:id="@+id/btnTogglePassword"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/cd_toggle_password"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_eye"
+                app:tint="@color/text_primary" />
         </LinearLayout>
 
         <!-- Personas en tu hogar -->

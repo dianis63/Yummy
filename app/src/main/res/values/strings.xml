@@ -34,4 +34,59 @@
 
     <string name="cd_back">Volver</string>
     <string name="cd_toggle_password">Mostrar u ocultar contraseña</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_inventory">Inventario</string>
+    <string name="nav_shopping">Compras</string>
+    <string name="nav_recipes">Recetas</string>
+    <string name="nav_profile">Perfil</string>
+
+    <string name="home_hello">Hola,</string>
+    <string name="home_stat_attention">Por atender</string>
+    <string name="home_stat_in_stock">En casa</string>
+    <string name="home_stat_expired">Vencidos</string>
+    <string name="home_qa_add">Agregar</string>
+    <string name="home_expiring_title">Vence pronto</string>
+    <string name="home_recipes_title">Recetas para hoy</string>
+    <string name="home_see_all">Ver todo</string>
+    <string name="home_expiring_empty">Todo en orden: no tienes productos por vencer</string>
+    <string name="home_recipes_empty">Agrega productos a tu inventario para ver recetas sugeridas</string>
+    <string name="home_load_error">No se pudo cargar la información. Revisa tu conexión</string>
+
+    <string name="fab_new_recipe">Nueva receta</string>
+    <string name="fab_add_shopping">Agregar Compra</string>
+    <string name="fab_add_product">Agregar producto</string>
+
+    <string name="status_expired">Vencido</string>
+    <string name="status_expiring">Por vencer</string>
+    <string name="status_fresh">Vigente</string>
+    <string name="expiry_ago">Venció hace %1$dd</string>
+    <string name="expiry_today">Vence hoy</string>
+    <string name="expiry_in">Vence en %1$dd</string>
+    <string name="recipe_meta">%1$d min · %2$d/%3$d ingr.</string>
+    <string name="coming_soon">Próximamente</string>
+    <string name="logout_temp">Cerrar sesión</string>
+    <string name="profile_title">Perfil</string>
+    <string name="profile_stat_products">Productos</string>
+    <string name="profile_stat_recipes">Recetas</string>
+    <string name="profile_stat_favorites">Favoritas</string>
+    <string name="profile_section_settings">Configuración</string>
+    <string name="profile_section_home">Hogar</string>
+    <string name="profile_section_account">Cuenta</string>
+    <string name="profile_notify_days">Avisar antes</string>
+    <string name="profile_units">Unidades</string>
+    <string name="profile_members">Miembros del hogar</string>
+    <string name="profile_categories">Categorías personalizadas</string>
+    <string name="profile_locations">Ubicaciones de almacenamiento</string>
+    <string name="profile_logout">Cerrar sesión</string>
+    <string name="profile_household_chip">%1$d en el hogar</string>
+    <string name="profile_version">Yummy · v%1$s</string>
+    <string name="profile_error">No se pudo completar la acción. Revisa tu conexión</string>
+    <string name="units_metric">Métrico</string>
+    <string name="units_imperial">Imperial</string>
+    <string name="dialog_cancel">Cancelar</string>
+
+    <plurals name="days">
+        <item quantity="one">%d día</item>
+        <item quantity="other">%d días</item>
+    </plurals>
 </resources>

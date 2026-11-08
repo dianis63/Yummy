@@ -90,4 +90,11 @@
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
     </style>
+    <style name="YummySectionLabel">
+        <item name="android:fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_hint</item>
+        <item name="android:letterSpacing">0.1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
 </resources>
