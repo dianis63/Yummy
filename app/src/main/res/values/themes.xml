@@ -97,4 +97,28 @@
         <item name="android:letterSpacing">0.1</item>
         <item name="android:textAllCaps">true</item>
     </style>
+
+    <!-- Etiqueta de cada campo de los formularios -->
+    <style name="YummyFieldLabel" parent="YummyBody">
+        <item name="android:fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/icon_gray</item>
+        <item name="android:gravity">start</item>
+    </style>
+
+    <!-- Diálogo de pantalla completa (detalle de producto) -->
+    <style name="Theme.Yummy.FullScreenDialog" parent="Theme.Yummy">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@color/background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Calendario de la fecha de vencimiento (colores de Yummy) -->
+    <style name="ThemeOverlay.Yummy.DatePicker" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
 </resources>

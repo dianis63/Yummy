@@ -11,8 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.yummy.app.data.model.ExpiringProduct
 import com.yummy.app.databinding.ItemProductBinding
 
-class ProductAdapter : ListAdapter<ExpiringProduct, ProductAdapter.VH>(Diff) {
-
+class ProductAdapter(
+    private val onClick: ((ExpiringProduct) -> Unit)? = null
+) : ListAdapter<ExpiringProduct, ProductAdapter.VH>(Diff) {
     class VH(val b: ItemProductBinding) : RecyclerView.ViewHolder(b.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -40,6 +41,7 @@ class ProductAdapter : ListAdapter<ExpiringProduct, ProductAdapter.VH>(Diff) {
             dot.backgroundTintList = fg
             txtChip.setText(ui.label)
             txtChip.setTextColor(fg)
+            root.setOnClickListener { onClick?.invoke(p) }
         }
     }
 

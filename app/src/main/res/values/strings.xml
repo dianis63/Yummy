@@ -89,4 +89,76 @@
         <item quantity="one">%d día</item>
         <item quantity="other">%d días</item>
     </plurals>
+
+
+    <plurals name="inventory_count">
+        <item quantity="one">%d producto en casa</item>
+        <item quantity="other">%d productos en casa</item>
+    </plurals>
+
+    <string name="inventory_search_hint">Buscar productos...</string>
+    <string name="inventory_filter_all">Todos</string>
+    <string name="inventory_filter_expiring">Por vencer</string>
+    <string name="inventory_filter_expired">Vencidos</string>
+    <string name="inventory_empty">Aún no tienes productos. Toca el botón + para agregar el primero</string>
+    <string name="inventory_empty_filtered">No hay productos que coincidan con tu búsqueda</string>
+    <string name="inventory_load_error">No se pudo cargar el inventario. Revisa tu conexión</string>
+
+    <string name="add_product_title">Agregar producto</string>
+    <string name="add_product_subtitle">Nuevo en tu despensa</string>
+    <string name="edit_product_title">Editar producto</string>
+    <string name="edit_product_subtitle">Actualiza los datos</string>
+    <string name="field_name">Nombre</string>
+    <string name="field_quantity">Cantidad</string>
+    <string name="field_unit">Unidad</string>
+    <string name="field_category">Categoría</string>
+    <string name="field_location">Ubicación</string>
+    <string name="field_expiry_days">Días hasta vencimiento</string>
+    <string name="hint_product_name">Ej. Leche entera</string>
+    <string name="btn_save_product">Guardar producto</string>
+    <string name="btn_save_changes">Guardar cambios</string>
+    <string name="btn_saving">Guardando...</string>
+    <string name="error_name_required">Escribe el nombre del producto</string>
+    <string name="error_quantity">Escribe una cantidad de 1 o más</string>
+    <string name="error_unit">Escribe la unidad (ej. pzs, kg, L)</string>
+    <string name="error_category">Elige una categoría</string>
+    <string name="error_location">Elige una ubicación</string>
+    <string name="error_expiry_days">Escribe un número de días entre 0 y 3650</string>
+    <string name="product_saved">Producto guardado</string>
+    <string name="product_updated">Producto actualizado</string>
+    <string name="product_save_error">No se pudo guardar. Revisa tu conexión</string>
+    <string name="add_product_load_error">No se pudieron cargar las categorías. Revisa tu conexión</string>
+    <string name="hint_days_expired">Vencido: escribe los días para renovarlo</string>
+    <string name="cd_increase">Aumentar</string>
+    <string name="cd_decrease">Disminuir</string>
+
+    <string name="detail_title">Detalle</string>
+    <string name="detail_quantity">Cantidad</string>
+    <string name="detail_category">Categoría</string>
+    <string name="detail_location">Ubicación</string>
+    <string name="detail_purchase_date">Fecha de compra</string>
+    <string name="detail_expiry">Vencimiento</string>
+    <string name="detail_no_category">Sin categoría</string>
+    <string name="detail_no_location">Sin ubicación</string>
+    <string name="detail_expired_ago">Venció hace %1$s</string>
+    <string name="detail_expires_in">Vence en %1$s</string>
+    <string name="detail_error">No se pudo completar la acción. Revisa tu conexión</string>
+    <string name="btn_delete">Eliminar</string>
+    <string name="btn_consumed">Consumido</string>
+    <string name="delete_confirm_title">¿Eliminar producto?</string>
+    <string name="delete_confirm_message">Se eliminará %1$s de tu inventario. Esta acción no se puede deshacer.</string>
+    <string name="product_consumed">Producto consumido. Quedó en tu lista de compras</string>
+    <string name="product_deleted">Producto eliminado</string>
+    <string name="cd_favorite">Marcar como favorito</string>
+    <string name="cd_edit">Editar producto</string>
+
+    <string name="field_expiry_date">Fecha de vencimiento</string>
+    <string name="hint_expiry_date">Selecciona una fecha</string>
+    <string name="error_expiry_date">Elige una fecha de vencimiento de hoy en adelante</string>
+    <string name="date_picker_title">Fecha de vencimiento</string>
+    <string name="inventory_filter_favorites">Favoritos</string>
+    <string name="consume_confirm_title">¿Se agotó?</string>
+    <string name="consume_confirm_message">%1$s bajará a 0, se marcará como consumido y quedará en tu lista de compras.</string>
+    <string name="consume_confirm_action">Sí, se agotó</string>
+
 </resources>

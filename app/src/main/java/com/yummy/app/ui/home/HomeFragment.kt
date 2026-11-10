@@ -19,14 +19,14 @@ import com.yummy.app.ui.components.ProductAdapter
 import com.yummy.app.ui.main.MainNavigator
 import com.yummy.app.ui.main.Tab
 import kotlinx.coroutines.launch
-
+import com.yummy.app.ui.inventory.ProductDetailDialog
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private val viewModel: HomeViewModel by viewModels()
-    private val productAdapter = ProductAdapter()
+    private val productAdapter = ProductAdapter { openDetail(it.id) }
     private val recipeAdapter = RecipeCardAdapter()
     private val nav get() = requireActivity() as MainNavigator
 
@@ -35,6 +35,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         applyInsets()
         setupLists()
         setupClicks()
+
+        childFragmentManager.setFragmentResultListener(
+            ProductDetailDialog.RESULT_KEY, viewLifecycleOwner
+        ) { _, _ -> viewModel.refresh() }
 
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -78,6 +82,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         qaAdd.setOnClickListener { nav.openAddMenu() }
         btnSeeAllExpiring.setOnClickListener { nav.navigateTo(Tab.INVENTORY) }
         btnSeeAllRecipes.setOnClickListener { nav.navigateTo(Tab.RECIPES) }
+    }
+
+    private fun openDetail(productId: String) {
+        if (childFragmentManager.findFragmentByTag(ProductDetailDialog.TAG) != null) return
+        ProductDetailDialog.newInstanceFor(productId)
+            .show(childFragmentManager, ProductDetailDialog.TAG)
     }
 
     private fun render(s: HomeState) = with(binding) {

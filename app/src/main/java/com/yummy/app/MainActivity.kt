@@ -24,6 +24,8 @@ import com.yummy.app.ui.home.HomeFragment
 import com.yummy.app.ui.main.MainNavigator
 import com.yummy.app.ui.main.PlaceholderFragment
 import com.yummy.app.ui.main.Tab
+import com.yummy.app.ui.inventory.InventoryFragment
+import com.yummy.app.ui.addproduct.AddProductActivity
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity(), MainNavigator {
@@ -101,7 +103,11 @@ class MainActivity : AppCompatActivity(), MainNavigator {
         )
         binding.speedDial.onActionClick = { action ->
             // TODO compañeros: abrir aquí la pantalla de cada acción (action.id)
-            Toast.makeText(this, R.string.coming_soon, Toast.LENGTH_SHORT).show()
+            if (action.id == ACTION_ADD_PRODUCT) {
+                startActivity(AddProductActivity.newIntent(this))
+            } else {
+                Toast.makeText(this, R.string.coming_soon, Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -124,6 +130,7 @@ class MainActivity : AppCompatActivity(), MainNavigator {
     private fun fragmentFor(tab: Tab): Fragment = when (tab) {
         Tab.HOME -> HomeFragment()
         Tab.PROFILE -> ProfileFragment()
+        Tab.INVENTORY -> InventoryFragment()
         else -> PlaceholderFragment.newInstance(tab.label)
     }
 

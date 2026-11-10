@@ -8,8 +8,14 @@ import com.yummy.app.R
 object CategoryIcons {
     @DrawableRes
     fun forKey(key: String?): Int = when (key) {
-        // "bread" -> R.drawable.ic_cat_bread
-        // "milk"  -> R.drawable.ic_cat_milk
+        "milk" -> R.drawable.ic_cat_milk
+        "grain" -> R.drawable.ic_cat_grain
+        "leaf" -> R.drawable.ic_cat_leaf
+        "apple" -> R.drawable.ic_cat_apple
+        "meat" -> R.drawable.ic_cat_meat
+        "bread" -> R.drawable.ic_cat_bread
+        "drink" -> R.drawable.ic_cat_drink
+        "tag" -> R.drawable.ic_tag
         else -> R.drawable.ic_nav_inventory
     }
 }
