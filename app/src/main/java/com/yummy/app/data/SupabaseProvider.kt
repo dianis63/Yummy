@@ -1,5 +1,6 @@
 package com.yummy.app.data
 
+import io.github.jan.supabase.storage.Storage
 import com.yummy.app.BuildConfig
 import io.github.jan.supabase.auth.Auth
 import io.github.jan.supabase.createSupabaseClient
@@ -12,5 +13,6 @@ object SupabaseProvider {
     ) {
         install(Auth)
         install(Postgrest)
+        install(Storage)
     }
 }

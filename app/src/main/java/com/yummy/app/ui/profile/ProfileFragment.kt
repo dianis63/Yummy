@@ -16,6 +16,7 @@ import com.yummy.app.databinding.FragmentProfileBinding
 import com.yummy.app.ui.components.applyStatusBarPadding
 import com.yummy.app.ui.main.MainNavigator
 import kotlinx.coroutines.launch
+import com.yummy.app.ui.locations.LocationsActivity
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
@@ -79,7 +80,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         // TODO: abrir las pantallas de Categorías y Ubicaciones cuando existan
         rowCategories.setOnClickListener { comingSoon() }
-        rowLocations.setOnClickListener { comingSoon() }
+        rowLocations.setOnClickListener {
+            startActivity(LocationsActivity.newIntent(requireContext()))
+        }
 
         rowLogout.setOnClickListener { (requireActivity() as MainNavigator).logout() }
     }

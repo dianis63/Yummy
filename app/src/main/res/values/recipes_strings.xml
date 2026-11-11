@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="recipe_match_text">#B3283D</color>
+
+    <!-- Lista -->
+    <string name="recipes_count">%1$d en tu recetario</string>
+    <string name="recipes_empty">Aún no tienes recetas. Toca + para crear la primera</string>
+    <string name="recipes_empty_filtered">No hay recetas en esta categoría</string>
+    <string name="recipes_load_error">No se pudieron cargar las recetas</string>
+    <string name="recipes_filter_all">Todas</string>
+    <string name="recipes_filter_favorites">Favoritas</string>
+    <string name="recipe_featured">Recomendada hoy · %1$d%%</string>
+    <string name="recipe_meta_long">%1$d min · %2$d/%3$d ingredientes</string>
+    <string name="cd_recipe_favorite">Marcar receta como favorita</string>
+
+    <!-- Tipos de comida y dificultad -->
+    <string name="meal_breakfast">Desayuno</string>
+    <string name="meal_lunch">Almuerzo</string>
+    <string name="meal_dinner">Cena</string>
+    <string name="meal_snack">Snack</string>
+    <string name="difficulty_easy">Fácil</string>
+    <string name="difficulty_medium">Medio</string>
+    <string name="difficulty_hard">Difícil</string>
+
+    <!-- Detalle -->
+    <string name="recipe_match_full">%1$d%% coincidencia</string>
+    <string name="recipe_minutes">%1$d min</string>
+    <string name="recipe_ingredients_title">Ingredientes</string>
+    <string name="recipe_ingredients_count">(%1$d/%2$d)</string>
+    <string name="recipe_steps_title">Preparación</string>
+    <string name="recipe_detail_error">No se pudo cargar la receta</string>
+
+    <!-- Nueva receta -->
+    <string name="hint_ingredient_name">Ingrediente (ej. Tomate)</string>
+    <string name="btn_add_ingredient">Agregar ingrediente</string>
+    <string name="cd_remove_ingredient">Quitar ingrediente</string>
+    <string name="error_ingredient_quantity">Ingresa una cantidad válida</string>
+    <string name="add_recipe_subtitle">Tu recetario personal</string>
+    <string name="add_recipe_title">Nueva receta</string>
+    <string name="field_recipe_image">Imagen</string>
+    <string name="recipe_image_add">Agregar imagen</string>
+    <string name="recipe_image_change">Cambiar imagen</string>
+    <string name="field_recipe_name">Nombre</string>
+    <string name="hint_recipe_name">Ej. Sopa de verduras</string>
+    <string name="field_recipe_time">Tiempo (minutos)</string>
+    <string name="field_recipe_meal">Tipo de comida</string>
+    <string name="field_recipe_difficulty">Dificultad</string>
+    <string name="field_recipe_ingredients">Ingredientes</string>
+    <string name="field_recipe_steps">Pasos (uno por línea)</string>
+    <string name="hint_recipe_steps">Pica las verduras\nCocina 20 min</string>
+    <string name="btn_save_recipe">Guardar receta</string>
+    <string name="error_recipe_name">Escribe el nombre de la receta</string>
+    <string name="error_recipe_time">Ingresa un tiempo entre 1 y 999 minutos</string>
+    <string name="error_recipe_ingredients">Agrega al menos un ingrediente</string>
+    <string name="recipe_saved">Receta guardada</string>
+    <string name="recipe_save_error">No se pudo guardar la receta. Inténtalo de nuevo</string>
+</resources>

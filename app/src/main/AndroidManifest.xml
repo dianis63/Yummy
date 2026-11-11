@@ -36,6 +36,13 @@
             android:name=".ui.addproduct.AddProductActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.addrecipe.AddRecipeActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.locations.LocationsActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
