@@ -15,11 +15,20 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import com.yummy.app.data.ProfileRepository
+
+object UnitOptions {
+    val metric = listOf("pzs", "paq", "g", "kg", "ml", "L")
+    val imperial = listOf("pzs", "paq", "oz", "lb", "oz líq", "gal")
+
+    fun forSystem(system: String) = if (system == "imperial") imperial else metric
+}
 
 data class AddProductState(
     val loading: Boolean = true,
     val categories: List<ProductCategory> = emptyList(),
     val locations: List<StorageLocation> = emptyList(),
+    val units: List<String> = UnitOptions.metric,
     val categoryId: String? = null,
     val locationId: String? = null,
     val expiryDate: String? = null,
@@ -44,6 +53,15 @@ class AddProductViewModel : ViewModel() {
                 coroutineScope {
                     val categories = async { InventoryRepository.categories() }
                     val locations = async { InventoryRepository.locations() }
+                    val system = async {
+                        try {
+                            ProfileRepository.profile().units
+                        } catch (e: CancellationException) {
+                            throw e
+                        } catch (e: Exception) {
+                            "metric"
+                        }
+                    }
                     val cats = categories.await()
                     val locs = locations.await()
                     _state.update {
@@ -51,6 +69,7 @@ class AddProductViewModel : ViewModel() {
                             loading = false,
                             categories = cats,
                             locations = locs,
+                            units = UnitOptions.forSystem(system.await()),
                             categoryId = editing?.categoryId,
                             locationId = editing?.locationId ?: locs.firstOrNull()?.id
                         )

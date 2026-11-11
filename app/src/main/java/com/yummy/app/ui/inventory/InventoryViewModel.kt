@@ -39,20 +39,19 @@ class InventoryViewModel : ViewModel() {
     fun refresh() = load(full = true)
 
     fun onSearch(text: String) {
-        _state.update { it.copy(search = text) }
+        _state.update { it.copy(search = text, loading = true) }
         load(full = false, delayMs = 300)
     }
 
     fun selectStatus(filter: InventoryFilter) {
-        _state.update { it.copy(filter = filter, categoryId = null) }
+        _state.update { it.copy(filter = filter, categoryId = null, loading = true) }
         load(full = false)
     }
 
     fun selectCategory(id: String) {
-        _state.update { it.copy(filter = InventoryFilter.ALL, categoryId = id) }
+        _state.update { it.copy(filter = InventoryFilter.ALL, categoryId = id, loading = true) }
         load(full = false)
     }
-
     fun errorShown() = _state.update { it.copy(showError = false) }
 
 

@@ -157,6 +157,7 @@ class AddProductActivity : AppCompatActivity() {
                 .hideSoftInputFromWindow(it.windowToken, 0)
             it.clearFocus()
         }
+        val units = viewModel.state.value.units
         ListPopupWindow(this@AddProductActivity).apply {
             anchorView = unitField
             width = unitField.width
@@ -164,15 +165,14 @@ class AddProductActivity : AppCompatActivity() {
             setBackgroundDrawable(
                 ContextCompat.getDrawable(this@AddProductActivity, R.drawable.bg_card)
             )
-            setAdapter(ArrayAdapter(this@AddProductActivity, R.layout.item_dropdown, UNITS))
+            setAdapter(ArrayAdapter(this@AddProductActivity, R.layout.item_dropdown, units))
             setOnItemClickListener { _, _, position, _ ->
-                txtUnit.text = UNITS[position]
+                txtUnit.text = units[position]
                 dismiss()
             }
             show()
         }
     }
-
     private fun showDatePicker() {
         currentFocus?.let {
             getSystemService(InputMethodManager::class.java)
@@ -306,7 +306,6 @@ class AddProductActivity : AppCompatActivity() {
         private const val DEFAULT_DAYS = 7
         private const val MAX_QUANTITY = 99999.0
         private const val MAX_FUTURE_MILLIS = 3650L * 24L * 60L * 60L * 1000L
-        private val UNITS = listOf("pzs", "kg", "g", "lb", "oz", "L", "ml", "paq")
 
         fun newIntent(context: Context, product: InventoryProduct? = null) =
             Intent(context, AddProductActivity::class.java).apply {
