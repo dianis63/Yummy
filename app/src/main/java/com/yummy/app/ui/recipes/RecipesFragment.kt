@@ -110,7 +110,11 @@ class RecipesFragment : Fragment(R.layout.fragment_recipes) {
 
         txtEmpty.isVisible = !s.loading && visible.isEmpty()
         txtEmpty.setText(
-            if (s.filter == RecipeFilter.ALL) R.string.recipes_empty else R.string.recipes_empty_filtered
+            when (s.filter) {
+                RecipeFilter.ALL -> R.string.recipes_empty
+                RecipeFilter.COOKABLE -> R.string.recipes_empty_cookable
+                else -> R.string.recipes_empty_filtered
+            }
         )
 
         if (s.showError) {

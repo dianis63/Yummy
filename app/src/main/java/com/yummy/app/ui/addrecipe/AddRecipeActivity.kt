@@ -233,8 +233,11 @@ class AddRecipeActivity : AppCompatActivity() {
             binding.etMinutes.error = getString(R.string.error_recipe_time); return
         }
         val ingredients = collectIngredients() ?: return
+        if (steps.isEmpty()) {
+            binding.etSteps.error = getString(R.string.error_recipe_steps); return
+        }
 
-        viewModel.save(name, minutes, ingredients, steps.ifEmpty { null })
+        viewModel.save(name, minutes, ingredients, steps)
     }
 
     private fun render(s: AddRecipeState) = with(binding) {

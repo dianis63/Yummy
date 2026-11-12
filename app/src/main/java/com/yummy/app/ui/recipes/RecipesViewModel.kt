@@ -17,12 +17,15 @@ import kotlinx.coroutines.launch
 
 enum class RecipeFilter(@StringRes val label: Int) {
     ALL(R.string.recipes_filter_all),
+    COOKABLE(R.string.recipes_filter_cookable),
     FAVORITES(R.string.recipes_filter_favorites),
     BREAKFAST(R.string.meal_breakfast),
     LUNCH(R.string.meal_lunch),
     DINNER(R.string.meal_dinner),
     SNACK(R.string.meal_snack)
 }
+
+private const val COOKABLE_MIN_PERCENT = 50
 
 data class RecipesState(
     val loading: Boolean = true,
@@ -33,6 +36,7 @@ data class RecipesState(
     val visible: List<RecipeSummary>
         get() = when (filter) {
             RecipeFilter.ALL -> all
+            RecipeFilter.COOKABLE -> all.filter { it.matchPercent >= COOKABLE_MIN_PERCENT }
             RecipeFilter.FAVORITES -> all.filter { it.isFavorite }
             RecipeFilter.BREAKFAST -> all.filter { it.mealType == MealType.BREAKFAST }
             RecipeFilter.LUNCH -> all.filter { it.mealType == MealType.LUNCH }
