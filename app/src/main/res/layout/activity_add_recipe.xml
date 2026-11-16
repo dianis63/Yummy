@@ -229,7 +229,7 @@
                 style="@style/YummyFieldLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/field_recipe_difficulty" />
 
             <LinearLayout
@@ -237,35 +237,30 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:clipChildren="false"
+                android:clipToPadding="false"
                 android:orientation="horizontal"
                 android:paddingBottom="6dp">
 
                 <TextView
                     android:id="@+id/chipEasy"
                     style="@style/YummyChip"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_width="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
                     android:elevation="2dp"
                     android:text="@string/difficulty_easy" />
 
                 <TextView
                     android:id="@+id/chipMedium"
                     style="@style/YummyChip"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
+                    android:layout_width="wrap_content"
                     android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
                     android:elevation="2dp"
                     android:text="@string/difficulty_medium" />
 
                 <TextView
                     android:id="@+id/chipHard"
                     style="@style/YummyChip"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:elevation="2dp"
                     android:text="@string/difficulty_hard" />
             </LinearLayout>
@@ -275,7 +270,7 @@
                 style="@style/YummyFieldLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="16dp"
                 android:text="@string/field_recipe_ingredients" />
 
             <LinearLayout
