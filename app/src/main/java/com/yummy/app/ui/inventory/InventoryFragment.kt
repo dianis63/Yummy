@@ -39,7 +39,7 @@ class InventoryFragment : Fragment(R.layout.fragment_inventory) {
     private val adapter = InventoryAdapter(
         onClick = { openDetail(it) },
         onMinus = { minus(it) },
-        onPlus = { viewModel.changeQuantity(it.id, 1.0) }
+        onPlus = { plus(it) }
     )
 
     private var chipsKey: Triple<List<ProductCategory>, InventoryFilter, String?>? = null
@@ -126,6 +126,15 @@ class InventoryFragment : Fragment(R.layout.fragment_inventory) {
             }
             .setNegativeButton(R.string.dialog_cancel, null)
             .show()
+    }
+
+    private fun plus(p: InventoryProduct) {
+        if (p.expiryStatus == "expired") {
+            Toast.makeText(requireContext(), R.string.plus_expired_blocked, Toast.LENGTH_LONG)
+                .show()
+            return
+        }
+        viewModel.changeQuantity(p.id, 1.0)
     }
 
     private fun render(s: InventoryState) = with(binding) {

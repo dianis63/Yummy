@@ -160,5 +160,6 @@
     <string name="consume_confirm_title">¿Se agotó?</string>
     <string name="consume_confirm_message">%1$s bajará a 0, se marcará como consumido y quedará en tu lista de compras.</string>
     <string name="consume_confirm_action">Sí, se agotó</string>
+    <string name="plus_expired_blocked">Este producto está vencido. Edítalo para renovar la fecha o regístralo de nuevo</string>
 
 </resources>

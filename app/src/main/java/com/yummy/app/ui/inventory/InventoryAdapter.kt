@@ -50,6 +50,7 @@ class InventoryAdapter(
             root.setOnClickListener { onClick(p) }
             btnMinus.setOnClickListener { onMinus(p) }
             btnPlus.setOnClickListener { onPlus(p) }
+            btnPlus.alpha = if (p.expiryStatus == "expired") 0.4f else 1f
         }
     }
 

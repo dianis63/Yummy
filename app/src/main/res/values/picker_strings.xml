@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mtrl_picker_out_of_range">The date is not valid. Choose today or a later date</string>
+</resources>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="mtrl_picker_out_of_range" tools:ignore="ExtraTranslation">La fecha no es válida. Elige hoy o una fecha posterior</string>
+</resources>
