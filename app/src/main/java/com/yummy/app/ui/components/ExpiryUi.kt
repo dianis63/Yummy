@@ -13,7 +13,7 @@ enum class ExpiryUi(
     EXPIRED(R.color.status_expired_bg, R.color.status_expired_fg, R.string.status_expired),
     EXPIRING(R.color.status_expiring_bg, R.color.status_expiring_fg, R.string.status_expiring),
     FRESH(R.color.status_fresh_bg, R.color.status_fresh_fg, R.string.status_fresh),
-    NO_DATE(R.color.status_expiring_bg, R.color.status_expiring_fg, R.string.status_no_date);
+    NO_DATE(R.color.status_no_date_bg, R.color.status_no_date_fg, R.string.status_no_date);
 
     companion object {
         fun from(status: String) = when (status) {
