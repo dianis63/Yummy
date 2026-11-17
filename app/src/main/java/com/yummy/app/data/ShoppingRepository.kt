@@ -9,6 +9,9 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
+import io.github.jan.supabase.postgrest.postgrest
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 
 object ShoppingRepository {
     private val client get() = SupabaseProvider.client
@@ -39,6 +42,15 @@ object ShoppingRepository {
         }) {
             filter { eq("id", id) }
         }
+    }
+
+    suspend fun buy(id: String, quantity: Double, locationId: String, expiry: String) {
+        client.postgrest.rpc("buy_shopping_item", buildJsonObject {
+            put("p_id", id)
+            put("p_quantity", quantity)
+            put("p_location_id", locationId)
+            put("p_expiry", expiry)
+        })
     }
 
     suspend fun delete(id: String) {

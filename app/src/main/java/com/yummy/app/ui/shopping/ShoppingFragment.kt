@@ -28,7 +28,13 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
     private val viewModel: ShoppingViewModel by viewModels()
 
     private val adapter = ShoppingAdapter(
-        onToggle = { viewModel.toggleChecked(it) },
+        onToggle = { item ->
+            if (item.isChecked) {
+                Toast.makeText(requireContext(), R.string.shopping_already_bought, Toast.LENGTH_SHORT).show()
+            } else {
+                openBuySheet(item.id)
+            }
+        },
         onRemove = { viewModel.remove(it) }
     )
 
@@ -81,6 +87,11 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
     private fun openSheet() {
         if (childFragmentManager.findFragmentByTag(AddShoppingItemSheet.TAG) != null) return
         AddShoppingItemSheet().show(childFragmentManager, AddShoppingItemSheet.TAG)
+    }
+
+    private fun openBuySheet(itemId: String) {
+        if (childFragmentManager.findFragmentByTag(BuyItemSheet.TAG) != null) return
+        BuyItemSheet.newInstance(itemId).show(childFragmentManager, BuyItemSheet.TAG)
     }
 
     private fun showClearMenu() {

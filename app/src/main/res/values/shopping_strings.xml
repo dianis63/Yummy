@@ -27,4 +27,9 @@
     <string name="cd_shopping_check">Marcar como comprado</string>
     <string name="cd_shopping_remove">Quitar de la lista</string>
     <string name="cd_shopping_clear">Limpiar lista</string>
+
+    <string name="shopping_buy_title">Agregar al inventario</string>
+    <string name="shopping_buy_cta">Guardar</string>
+    <string name="shopping_bought_to_inventory">Agregado a tu inventario</string>
+    <string name="shopping_already_bought">Este producto ya fue comprado</string>
 </resources>
