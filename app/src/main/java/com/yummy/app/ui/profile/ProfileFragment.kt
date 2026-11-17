@@ -16,6 +16,7 @@ import com.yummy.app.databinding.FragmentProfileBinding
 import com.yummy.app.ui.components.applyStatusBarPadding
 import com.yummy.app.ui.main.MainNavigator
 import kotlinx.coroutines.launch
+import com.yummy.app.ui.categories.CategoriesActivity
 import com.yummy.app.ui.locations.LocationsActivity
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
@@ -78,8 +79,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             ) { viewModel.setHousehold(householdOptions[it]) }
         }
 
-        // TODO: abrir las pantallas de Categorías y Ubicaciones cuando existan
-        rowCategories.setOnClickListener { comingSoon() }
+        rowCategories.setOnClickListener {
+            startActivity(CategoriesActivity.newIntent(requireContext()))
+        }
         rowLocations.setOnClickListener {
             startActivity(LocationsActivity.newIntent(requireContext()))
         }
@@ -111,9 +113,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     private fun daysText(days: Int) = resources.getQuantityString(R.plurals.days, days, days)
-
-    private fun comingSoon() =
-        Toast.makeText(requireContext(), R.string.coming_soon, Toast.LENGTH_SHORT).show()
 
     private fun showChoice(
         @StringRes title: Int,

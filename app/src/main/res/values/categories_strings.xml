@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="categories_title">Categorías</string>
+    <string name="categories_subtitle">Personaliza tus clasificaciones</string>
+    <string name="categories_empty_title">Sin categorías</string>
+    <string name="categories_empty_body">Agrega una categoría personalizada tocando el botón +</string>
+    <string name="categories_load_error">No se pudieron cargar las categorías</string>
+    <string name="cd_add_category">Agregar categoría</string>
+    <string name="cd_delete_category">Eliminar categoría</string>
+
+    <string name="category_new_title">Nueva Categoría</string>
+    <string name="hint_category_name">Nombre de la categoría</string>
+    <string name="category_icon_label">Selecciona un ícono</string>
+    <string name="category_save">Guardar</string>
+    <string name="category_saved">Categoría guardada</string>
+    <string name="category_error_name">Escribe el nombre de la categoría</string>
+    <string name="category_error_duplicate">Ya existe una categoría con ese nombre</string>
+    <string name="category_save_error">No se pudo guardar la categoría. Inténtalo de nuevo</string>
+
+    <string name="category_delete_title">Eliminar categoría</string>
+    <string name="category_delete_message">Se eliminará %1$s de tus categorías.</string>
+    <plurals name="category_in_use">
+        <item quantity="one">%1$s tiene %2$d producto asignado. Quítaselo para eliminarla</item>
+        <item quantity="other">%1$s tiene %2$d productos asignados. Quítaselos para eliminarla</item>
+    </plurals>
+    <string name="category_delete_error">No se pudo eliminar la categoría. Revisa tu conexión</string>
+</resources>
