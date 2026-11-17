@@ -176,6 +176,34 @@
     <style name="ThemeOverlay.Yummy.DatePicker" parent="ThemeOverlay.Material3.MaterialCalendar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/background</item>
+        <item name="colorSurfaceContainerHigh">@color/background</item>
+        <item name="elevationOverlayEnabled">false</item>
+        <!-- Solo la fuente: el color lo maneja el calendario segun el estado del dia -->
+        <item name="textAppearanceHeadlineLarge">@style/TextAppearance.Yummy.Picker.Headline</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Yummy.Picker.Body</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Yummy.Picker.Label</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Yummy.Picker.Caption</item>
+    </style>
+
+    <style name="TextAppearance.Yummy.Picker.Headline" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:fontFamily">@font/segoe_ui_bold</item>
+    </style>
+
+    <style name="TextAppearance.Yummy.Picker.Body" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:fontFamily">@font/segoe_ui</item>
+    </style>
+
+    <style name="TextAppearance.Yummy.Picker.Label" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/segoe_ui_bold</item>
+        <item name="android:fontFamily">@font/segoe_ui_bold</item>
+    </style>
+
+    <style name="TextAppearance.Yummy.Picker.Caption" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/segoe_ui</item>
+        <item name="android:fontFamily">@font/segoe_ui</item>
     </style>
 
 </resources>
