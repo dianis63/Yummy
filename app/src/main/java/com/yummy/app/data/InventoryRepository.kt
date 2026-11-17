@@ -64,7 +64,18 @@ object InventoryRepository {
         })
     }
 
-    suspend fun markConsumed(id: String) = updateColumn(id, "status", "consumed")
+    /**
+     * Baja la cantidad a 0 y marca el producto como consumido. El trigger
+     * products_after_consumed lo manda a la lista de compras con la cantidad que tenía.
+     */
+    suspend fun markConsumed(id: String) {
+        client.from("products").update({
+            set("quantity", 0.0)
+            set("status", "consumed")
+        }) {
+            filter { eq("id", id) }
+        }
+    }
 
     suspend fun setFavorite(id: String, favorite: Boolean) =
         updateColumn(id, "is_favorite", favorite)
