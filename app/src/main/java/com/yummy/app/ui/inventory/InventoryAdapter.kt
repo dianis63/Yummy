@@ -12,6 +12,7 @@ import com.yummy.app.databinding.ItemInventoryProductBinding
 import com.yummy.app.ui.components.CategoryIcons
 import com.yummy.app.ui.components.ExpiryUi
 import com.yummy.app.ui.components.pretty
+import com.yummy.app.R
 
 class InventoryAdapter(
     private val onClick: (InventoryProduct) -> Unit,
@@ -27,7 +28,8 @@ class InventoryAdapter(
     override fun onBindViewHolder(holder: VH, position: Int) {
         val p = getItem(position)
         val ctx = holder.itemView.context
-        val ui = ExpiryUi.from(p.expiryStatus)
+        val noDate = p.expiryDate == null
+        val ui = if (noDate) ExpiryUi.NO_DATE else ExpiryUi.from(p.expiryStatus)
         val fg = ColorStateList.valueOf(ContextCompat.getColor(ctx, ui.fg))
         val bg = ColorStateList.valueOf(ContextCompat.getColor(ctx, ui.bg))
 
@@ -35,7 +37,8 @@ class InventoryAdapter(
             txtName.text = p.name
             txtSub.text = listOfNotNull("${p.quantity.pretty()} ${p.unit}".trim(), p.locationName)
                 .joinToString(" · ")
-            txtDays.text = ExpiryUi.daysText(ctx, p.daysLeft)
+            txtDays.text = if (noDate) ctx.getString(R.string.no_date_hint)
+            else ExpiryUi.daysText(ctx, p.daysLeft)
             txtDays.setTextColor(fg)
 
             imgIcon.setImageResource(CategoryIcons.forKey(p.categoryIcon))

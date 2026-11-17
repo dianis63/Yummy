@@ -44,7 +44,8 @@ object ShoppingRepository {
         }
     }
 
-    suspend fun buy(id: String, quantity: Double, locationId: String, expiry: String) {
+    /** La fecha puede ir vacía: el usuario la completa después desde el inventario. */
+    suspend fun buy(id: String, quantity: Double, locationId: String, expiry: String?) {
         client.postgrest.rpc("buy_shopping_item", buildJsonObject {
             put("p_id", id)
             put("p_quantity", quantity)

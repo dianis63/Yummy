@@ -32,7 +32,7 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
             if (item.isChecked) {
                 Toast.makeText(requireContext(), R.string.shopping_already_bought, Toast.LENGTH_SHORT).show()
             } else {
-                openBuySheet(item.id)
+                viewModel.buyNow(item)
             }
         },
         onRemove = { viewModel.remove(it) }
@@ -89,10 +89,6 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
         AddShoppingItemSheet().show(childFragmentManager, AddShoppingItemSheet.TAG)
     }
 
-    private fun openBuySheet(itemId: String) {
-        if (childFragmentManager.findFragmentByTag(BuyItemSheet.TAG) != null) return
-        BuyItemSheet.newInstance(itemId).show(childFragmentManager, BuyItemSheet.TAG)
-    }
 
     private fun showClearMenu() {
         val s = viewModel.state.value
@@ -131,6 +127,15 @@ class ShoppingFragment : Fragment(R.layout.fragment_shopping) {
         progress.progress = if (s.total == 0) 0 else s.checked * 100 / s.total
         adapter.submitList(s.listItems)
         txtEmpty.isVisible = !s.loading && s.items.isEmpty()
+
+        if (s.bought) {
+            viewModel.boughtHandled()
+            Toast.makeText(requireContext(), R.string.shopping_bought_no_date, Toast.LENGTH_LONG).show()
+        }
+        if (s.showBuyError) {
+            Toast.makeText(requireContext(), R.string.shopping_save_error, Toast.LENGTH_LONG).show()
+            viewModel.buyErrorShown()
+        }
 
         if (s.showLoadError) {
             Toast.makeText(requireContext(), R.string.shopping_load_error, Toast.LENGTH_LONG).show()

@@ -155,7 +155,7 @@ class ProductDetailDialog : DialogFragment(R.layout.dialog_product_detail) {
         binding.root.alpha = if (p == null) 0f else 1f
         if (p == null) return
 
-        val ui = ExpiryUi.from(p.expiryStatus)
+        val ui = if (p.expiryDate == null) ExpiryUi.NO_DATE else ExpiryUi.from(p.expiryStatus)
         val fg = ColorStateList.valueOf(ContextCompat.getColor(ctx, ui.fg))
         val bg = ColorStateList.valueOf(ContextCompat.getColor(ctx, ui.bg))
 
@@ -170,7 +170,8 @@ class ProductDetailDialog : DialogFragment(R.layout.dialog_product_detail) {
             txtChip.setText(ui.label)
             txtChip.setTextColor(fg)
 
-            txtDays.text = daysText(p.daysLeft)
+            txtDays.text = if (p.expiryDate == null) getString(R.string.no_date_hint)
+            else daysText(p.daysLeft)
             txtDays.isVisible = txtDays.text.isNotEmpty()
 
             btnFavorite.setImageResource(
@@ -181,7 +182,8 @@ class ProductDetailDialog : DialogFragment(R.layout.dialog_product_detail) {
             rowCategory.txtValue.text = p.categoryName ?: getString(R.string.detail_no_category)
             rowLocation.txtValue.text = p.locationName ?: getString(R.string.detail_no_location)
             rowPurchase.txtValue.text = purchaseDate(p.createdAt)
-            rowExpiry.txtValue.text = formatDate(p.expiryDate)
+            rowExpiry.txtValue.text = if (p.expiryDate == null) getString(R.string.detail_no_date)
+            else formatDate(p.expiryDate)
 
             btnDelete.isEnabled = !s.busy
             btnConsumed.isEnabled = !s.busy

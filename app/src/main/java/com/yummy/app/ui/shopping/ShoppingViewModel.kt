@@ -21,6 +21,8 @@ import com.yummy.app.data.model.StorageLocation
 
 /** Nombre de la categoría comodín en la base; ahí caen los ítems sin categoría. */
 private const val OTHER_CATEGORY = "Otros"
+/** Ubicación donde entra lo comprado; si no existe, se usa la primera. */
+private const val DEFAULT_LOCATION = "Alacena"
 
 data class ShoppingState(
     val loading: Boolean = true,
@@ -150,18 +152,29 @@ class ShoppingViewModel : ViewModel() {
         }
     }
 
-    fun buy(item: ShoppingItemRow, quantity: Double, locationId: String, expiry: String) {
-        if (_state.value.buying) return
+    /**
+     * Compra el ítem con un solo toque: cantidad de la lista, ubicación por defecto
+     * y sin fecha de vencimiento (el inventario avisa que falta agregarla).
+     */
+    fun buyNow(item: ShoppingItemRow) {
+        val s = _state.value
+        if (s.buying) return
+        val location = s.locations.firstOrNull { it.name.equals(DEFAULT_LOCATION, true) }
+            ?: s.locations.firstOrNull()
+        if (location == null) {
+            _state.update { it.copy(showBuyError = true) }
+            return
+        }
         _state.update { it.copy(buying = true) }
         viewModelScope.launch {
             try {
-                ShoppingRepository.buy(item.id, quantity, locationId, expiry)
+                ShoppingRepository.buy(item.id, item.quantity, location.id, null)
                 val list = runCatching { ShoppingRepository.items() }.getOrNull()
-                _state.update { s ->
-                    s.copy(
+                _state.update { st ->
+                    st.copy(
                         buying = false,
                         bought = true,
-                        items = list ?: s.items.map {
+                        items = list ?: st.items.map {
                             if (it.id == item.id) it.copy(isChecked = true) else it
                         }
                     )

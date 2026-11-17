@@ -27,9 +27,10 @@
     <string name="cd_shopping_check">Marcar como comprado</string>
     <string name="cd_shopping_remove">Quitar de la lista</string>
     <string name="cd_shopping_clear">Limpiar lista</string>
+    <string name="status_no_date">Falta fecha</string>
 
-    <string name="shopping_buy_title">Agregar al inventario</string>
-    <string name="shopping_buy_cta">Guardar</string>
-    <string name="shopping_bought_to_inventory">Agregado a tu inventario</string>
+    <string name="no_date_hint">Agrega la fecha de vencimiento</string>
+    <string name="detail_no_date">Sin fecha</string>
+    <string name="shopping_bought_no_date">Agregado al inventario. Falta la fecha de vencimiento</string>
     <string name="shopping_already_bought">Este producto ya fue comprado</string>
 </resources>
