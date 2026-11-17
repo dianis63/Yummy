@@ -16,6 +16,8 @@ object CategoryIcons {
         "bread" -> R.drawable.ic_cat_bread
         "drink" -> R.drawable.ic_cat_drink
         "tag" -> R.drawable.ic_tag
+        "bag" -> R.drawable.ic_cat_bag
+        "seafood" -> R.drawable.ic_cat_seafood
         else -> R.drawable.ic_nav_inventory
     }
 }
