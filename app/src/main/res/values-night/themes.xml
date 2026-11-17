@@ -3,5 +3,7 @@
     <style name="Base.Theme.Yummy" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Yummy.BottomSheetDialog</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Yummy.AlertDialog</item>
     </style>
 </resources>

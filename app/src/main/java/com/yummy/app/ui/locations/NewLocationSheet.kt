@@ -41,8 +41,6 @@ class NewLocationSheet : BottomSheetDialogFragment(R.layout.sheet_new_location) 
     override fun onStart() {
         super.onStart()
         (dialog as? BottomSheetDialog)?.let { d ->
-            d.findViewById<View>(com.google.android.material.R.id.design_bottom_sheet)
-                ?.setBackgroundResource(R.drawable.bg_sheet_top)
             d.behavior.state = BottomSheetBehavior.STATE_EXPANDED
             d.behavior.skipCollapsed = true
             d.window?.setSoftInputMode(
