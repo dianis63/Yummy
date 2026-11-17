@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="shopping_title">Lista de compras</string>
+    <string name="shopping_progress">%1$d de %2$d completados</string>
+    <string name="shopping_bought">Comprados</string>
+    <string name="shopping_auto">auto</string>
+    <string name="shopping_empty">Tu lista está vacía. Agrega lo que necesitas comprar o deja que los productos agotados lleguen solos.</string>
+    <string name="shopping_category_other">Otros</string>
+
+    <string name="shopping_add_title">Agregar a la lista</string>
+    <string name="shopping_hint_name">Nombre del producto</string>
+    <string name="shopping_add_cta">Agregar</string>
+    <string name="shopping_error_name">Escribe el nombre del producto</string>
+    <string name="shopping_error_qty">La cantidad debe ser mayor que cero</string>
+    <string name="shopping_error_duplicate">Ya está en tu lista</string>
+    <string name="shopping_saved">Agregado a tu lista</string>
+
+    <string name="shopping_clear_title">Limpiar lista</string>
+    <string name="shopping_clear_bought">Limpiar comprados</string>
+    <string name="shopping_clear_all">Vaciar lista</string>
+    <string name="shopping_no_bought">Todavía no has marcado ningún producto como comprado</string>
+    <string name="shopping_clear_all_confirm">Se eliminarán todos los productos de tu lista de compras, incluidos los pendientes.</string>
+
+    <string name="shopping_load_error">No se pudo cargar tu lista. Revisa tu conexión</string>
+    <string name="shopping_save_error">No se pudo guardar el cambio. Revisa tu conexión</string>
+
+    <string name="cd_shopping_check">Marcar como comprado</string>
+    <string name="cd_shopping_remove">Quitar de la lista</string>
+    <string name="cd_shopping_clear">Limpiar lista</string>
+</resources>

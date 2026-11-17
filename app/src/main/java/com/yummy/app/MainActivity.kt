@@ -22,18 +22,19 @@ import com.yummy.app.ui.components.SpeedDialAction
 import com.yummy.app.ui.components.dp
 import com.yummy.app.ui.home.HomeFragment
 import com.yummy.app.ui.main.MainNavigator
-import com.yummy.app.ui.main.PlaceholderFragment
 import com.yummy.app.ui.main.Tab
 import com.yummy.app.ui.inventory.InventoryFragment
 import com.yummy.app.ui.addproduct.AddProductActivity
 import kotlinx.coroutines.launch
 import com.yummy.app.ui.recipes.RecipesFragment
+import com.yummy.app.ui.shopping.ShoppingFragment
 import com.yummy.app.ui.addrecipe.AddRecipeActivity
 
 class MainActivity : AppCompatActivity(), MainNavigator {
 
     private lateinit var binding: ActivityMainBinding
     private var currentTab = Tab.HOME
+    private var pendingShoppingAdd = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -104,10 +105,13 @@ class MainActivity : AppCompatActivity(), MainNavigator {
             )
         )
         binding.speedDial.onActionClick = { action ->
-            // TODO compañeros: abrir aquí la pantalla de cada acción (action.id)
             when (action.id) {
                 ACTION_ADD_PRODUCT -> startActivity(AddProductActivity.newIntent(this))
                 ACTION_NEW_RECIPE -> startActivity(AddRecipeActivity.newIntent(this))
+                ACTION_ADD_SHOPPING -> {
+                    pendingShoppingAdd = true
+                    navigateTo(Tab.SHOPPING)
+                }
                 else -> Toast.makeText(this, R.string.coming_soon, Toast.LENGTH_SHORT).show()
             }
         }
@@ -128,13 +132,13 @@ class MainActivity : AppCompatActivity(), MainNavigator {
         }
     }
 
-    // TODO compañeros: reemplazar cada PlaceholderFragment por su pantalla real
     private fun fragmentFor(tab: Tab): Fragment = when (tab) {
         Tab.HOME -> HomeFragment()
         Tab.PROFILE -> ProfileFragment()
         Tab.INVENTORY -> InventoryFragment()
         Tab.RECIPES -> RecipesFragment()
-        else -> PlaceholderFragment.newInstance(tab.label)
+        Tab.SHOPPING -> ShoppingFragment.newInstance(openAdd = pendingShoppingAdd)
+            .also { pendingShoppingAdd = false }
     }
 
     companion object {
