@@ -1,4 +1,5 @@
 package com.yummy.app.ui.home
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -8,11 +9,12 @@ import coil3.load
 import coil3.request.crossfade
 import com.yummy.app.R
 import com.yummy.app.data.HomeRepository
-import coil3.request.crossfade
 import com.yummy.app.data.model.SuggestedRecipe
 import com.yummy.app.databinding.ItemRecipeCardBinding
 
-class RecipeCardAdapter : ListAdapter<SuggestedRecipe, RecipeCardAdapter.VH>(Diff) {
+class RecipeCardAdapter(
+    private val onClick: (SuggestedRecipe) -> Unit
+) : ListAdapter<SuggestedRecipe, RecipeCardAdapter.VH>(Diff) {
 
     class VH(val b: ItemRecipeCardBinding) : RecyclerView.ViewHolder(b.root)
 
@@ -32,6 +34,7 @@ class RecipeCardAdapter : ListAdapter<SuggestedRecipe, RecipeCardAdapter.VH>(Dif
             } else {
                 imgRecipe.setImageDrawable(null)
             }
+            root.setOnClickListener { onClick(r) }
         }
     }
 

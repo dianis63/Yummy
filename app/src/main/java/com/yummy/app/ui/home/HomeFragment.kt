@@ -20,6 +20,7 @@ import com.yummy.app.ui.main.MainNavigator
 import com.yummy.app.ui.main.Tab
 import kotlinx.coroutines.launch
 import com.yummy.app.ui.inventory.ProductDetailDialog
+import com.yummy.app.ui.recipes.RecipeDetailDialog
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
@@ -27,9 +28,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private val viewModel: HomeViewModel by viewModels()
     private val productAdapter = ProductAdapter { openDetail(it.id) }
-    private val recipeAdapter = RecipeCardAdapter()
     private val nav get() = requireActivity() as MainNavigator
-
+    private val recipeAdapter = RecipeCardAdapter { openRecipe(it.recipeId) }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         _binding = FragmentHomeBinding.bind(view)
         applyInsets()
@@ -88,6 +88,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         if (childFragmentManager.findFragmentByTag(ProductDetailDialog.TAG) != null) return
         ProductDetailDialog.newInstanceFor(productId)
             .show(childFragmentManager, ProductDetailDialog.TAG)
+    }
+    private fun openRecipe(recipeId: String) {
+        if (childFragmentManager.findFragmentByTag(RecipeDetailDialog.TAG) != null) return
+        RecipeDetailDialog.newInstance(recipeId)
+            .show(childFragmentManager, RecipeDetailDialog.TAG)
     }
 
     private fun render(s: HomeState) = with(binding) {
