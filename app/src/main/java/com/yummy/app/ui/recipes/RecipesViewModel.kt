@@ -25,7 +25,7 @@ enum class RecipeFilter(@StringRes val label: Int) {
     SNACK(R.string.meal_snack)
 }
 
-private const val COOKABLE_MIN_PERCENT = 50
+private const val COOKABLE_MIN_PERCENT = 100
 
 data class RecipesState(
     val loading: Boolean = true,

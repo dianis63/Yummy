@@ -6,7 +6,7 @@ object AppPrefs {
     private const val KEY_ONBOARDING_DONE = "onboarding_done"
 
     // true = siempre muestra el onboarding
-    private const val ALWAYS_SHOW_ONBOARDING = true
+    private const val ALWAYS_SHOW_ONBOARDING = false
 
     fun isOnboardingDone(context: Context): Boolean {
         if (ALWAYS_SHOW_ONBOARDING) return false
